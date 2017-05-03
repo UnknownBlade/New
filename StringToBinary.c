@@ -4,7 +4,9 @@
 
 char* stringToBinary(char* s) {
     
-    if(s == NULL) return 0; 
+    if(s == NULL){
+        return 0;
+    } 
     size_t len = strlen(s);
     char *binary = malloc(len*8 + 1); 
     binary[0] = '\0';
