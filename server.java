@@ -9,8 +9,6 @@ public class Server
 	}
 	
 	public void run() throws Exception{
-		
-
 		ServerSocket SvrSock = new ServerSocket(444);
 
 		Socket Sock = SvrSock.accept(); 
