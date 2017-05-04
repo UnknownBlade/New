@@ -2,16 +2,17 @@
 #include <string.h>
 #include <stdlib.h>
 char *inputString(FILE* fr, size_t size){
-//The size is extended by the input with the value of the provisional
     char *str;
     int ch;
     size_t len = 0;
     str = realloc(NULL, sizeof(char)*size);//size is start size
-    if(!str)return str;
+    if(!str){
+        return str;
+    }
     while(EOF!=(ch=fgetc(fr)) && ch != '\n'){
         str[len++]=ch;
         if(len==size){
-            str = realloc(str, sizeof(char)*(size+=16));
+            str = realloc(str, sizeof(char)*(size += 16));
             if(!str)return str;
         }
     }
@@ -20,7 +21,7 @@ char *inputString(FILE* fr, size_t size){
     return realloc(str, sizeof(char)*len);
 }
 
-int CopyBin2Text(char* rafname, char* txtname)      // changed return value
+int CopyBinToText(char* rafname, char* txtname)      // changed return value
 {
     FILE *fraf, *ftxt;
 char *c;    
@@ -57,7 +58,7 @@ int main(void)
     if (makefile("abc.bin") == 0)
         printf("Failure\n");
     else {
-        if (CopyBin2Text("abc.bin", "cba.txt") == 0)
+        if (CopyBinToText("abc.bin", "cba.txt") == 0)
             printf("Failure\n");
         else
             printf("Success\n");
