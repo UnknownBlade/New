@@ -1,5 +1,5 @@
-import java.io.*;
 import java.net.*;
+import java.io.*;
 import java.util.Scanner;
 
 
@@ -15,7 +15,7 @@ public class Client{
 		String a = scan.next();
 		String reverse = new StringBuffer(a).reverse().toString();	
 		
-		Socket Sock = new Socket("192.168.1.140",444); // set Ip that is in the sama network as your server
+		Socket Sock = new Socket("192.168.1.140",444); // set Ip (same network as your server)
 		PrintStream PS = new PrintStream(Sock.getOutputStream());
 		PS.println(reverse);
 
