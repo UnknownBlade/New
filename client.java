@@ -24,6 +24,5 @@ public class Client{
 
 		String msg = BR.readLine();
 		System.out.println(msg);
-	
 	}
 }
